@@ -1,18 +1,13 @@
-import friends from 'data/friends.json';
+import { FriendListItem } from './FriendListItem/FriendListItem';
 
-export const FriendList = () => {
+export const FriendList = ({friends}) => {
     return (
-      <div
-        // style={{
-        //   height: '100vh',
-        //   display: 'flex',
-        //   justifyContent: 'center',
-        //   alignItems: 'center',
-        //   fontSize: 40,
-        //   color: '#010101'
-        // }}
-      >
-        <h2>FriendList</h2>
-      </div>
+      <>
+        {friends.map(({ avatar, name, isOnline, id }) => {
+          return <FriendListItem key={id} avatar={avatar} name={name} isOnline={isOnline}  />;
+        })}
+      </>
     );
   };
+
+

@@ -1,18 +1,26 @@
-import transactions from 'data/transactions.json';
 
-export const TransactionHistory = () => {
+
+export const TransactionHistory = ({transactions}) => {
     return (
-      <div
-        // style={{
-        //   height: '100vh',
-        //   display: 'flex',
-        //   justifyContent: 'center',
-        //   alignItems: 'center',
-        //   fontSize: 40,
-        //   color: '#010101'
-        // }}
-      >
-        <h2>TransactionHistory</h2>
-      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Amount</th>
+            <th>Currency</th>
+          </tr>
+        </thead>
+        <tbody>
+          {transactions.map(({ id, type, amount, currency }) => {
+            return (
+              <tr key={id}>
+                <td>{type}</td>
+                <td>{amount}</td>
+                <td>{currency}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
     );
   };

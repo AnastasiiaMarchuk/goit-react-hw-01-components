@@ -1,18 +1,18 @@
-import data from 'data/data.json';
-
-export const Statistics = () => {
+export const Statistics = ({title, stats}) => {
     return (
-      <div
-        // style={{
-        //   height: '100vh',
-        //   display: 'flex',
-        //   justifyContent: 'center',
-        //   alignItems: 'center',
-        //   fontSize: 40,
-        //   color: '#010101'
-        // }}
-      >
-        <h2>Statistics</h2>
-      </div>
-    );
-  };
+                <section className="statistics">
+                    <h2 className="title">Upload stats</h2>
+        
+                    <ul className="stat-list">
+                        {stats.map(({ label, percentage, id }) => (
+                            <li className="item" key={id}>
+                                <span className="label">{label}</span>
+                                <span className="percentage">{percentage}%</span>
+                            </li>
+                        ))}
+                    </ul>
+                </section>
+            );
+        };
+
+

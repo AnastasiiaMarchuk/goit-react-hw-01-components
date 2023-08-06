@@ -1,19 +1,35 @@
-import user from 'data/user.json';
+import { Container } from './Profile.styled';
 
-export const Profile = ({username}) => {
+
+
+export const Profile = ({avatar, username, tag, location, stats}) => {
     return (
-      <div
-        // style={{
-        //   height: '100vh',
-        //   display: 'flex',
-        //   justifyContent: 'center',
-        //   alignItems: 'center',
-        //   fontSize: 40,
-        //   color: '#010101'
-        // }}
-      >
-        <h1>Profile</h1>
-        <p>Name: {user.username}</p>
-      </div>
+        <Container>
+  <div >
+    <img
+      src={avatar}
+      alt="User avatar"
+      className="avatar"
+    />
+    <p className="name">{username}</p>
+    <p className="tag">{tag}</p>
+    <p className="location">{location}</p>
+  </div>
+
+  <ul className="stats">
+    <li>
+      <span className="label">Followers</span>
+      <span className="quantity">{stats.followers}</span>
+    </li>
+    <li>
+      <span className="label">Views</span>
+      <span className="quantity">{stats.views}</span>
+    </li>
+    <li>
+      <span className="label">Likes</span>
+      <span className="quantity">{stats.likes}</span>
+    </li>
+  </ul>
+  </Container>
     );
   };
