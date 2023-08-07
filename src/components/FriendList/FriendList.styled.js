@@ -7,4 +7,5 @@ export const FriendsContainer = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;`
+  gap: 8px;
+`;
